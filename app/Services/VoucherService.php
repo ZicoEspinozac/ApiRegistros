@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Services;
 
 use App\Events\Vouchers\VouchersCreated;
@@ -28,7 +27,9 @@ class VoucherService
             $vouchers[] = $this->storeVoucherFromXmlContent($xmlContent, $user);
         }
 
+        // Disparar el evento VouchersCreated
         VouchersCreated::dispatch($vouchers, $user);
+        Log::info('Evento VouchersCreated disparado para el usuario: ' . $user->id);
 
         return $vouchers;
     }
@@ -70,9 +71,11 @@ class VoucherService
         ]);
 
         $voucher->save();
+        // Disparar el evento VouchersCreated
+        // VoucherCreated::dispatch($voucher, $user);
 
         Log::info('Voucher stored successfully for user: ' . $user->id);
-
+        Log::info('Voucher processed successfully for user: ' . $user->id);
         return $voucher;
     }
 }

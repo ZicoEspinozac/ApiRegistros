@@ -1,6 +1,6 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/send-test-email', function () {
+    Mail::raw('Este es un correo de prueba.', function ($message) {
+        $message->to('test@example.com')
+                ->subject('Correo de Prueba');
+    });
+
+    return 'Correo enviado';
 });

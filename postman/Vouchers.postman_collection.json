@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "5665e0c6-be6a-4971-b64b-3f9ea21673b9",
+		"name": "Vouchers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40031035"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/v1/vouchers?page=1&paginate=10",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNzMyNzE3ODE0LCJleHAiOjE3MzI3MjE0MTQsIm5iZiI6MTczMjcxNzgxNCwianRpIjoibzBuRWs5QXdsQVZRZXQwbyIsInN1YiI6IjlkOTZmYWYwLTEzNjItNDM3OC05NzExLTdhMmU1MGMwNWU2ZiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.AzF4mvH3vEt9sDEvqmfD2h44kG3sEBuH5drLaKeemJ8",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/vouchers?page=1&paginate=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"vouchers"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "paginate",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/vouchers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNzMyNzIyMTA3LCJleHAiOjE3MzI3MjU3MDcsIm5iZiI6MTczMjcyMjEwNywianRpIjoiY0d5T0YyU3hjY3VsbDNtVCIsInN1YiI6IjlkOTcxNDg2LWEzYjUtNDc0Yi05N2E0LTdmN2RkOGM4NjkwOCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.EEHmH2PZVZm3txyeyl3YTo6ISqVoKjWwDC9qoLNPdOY",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/C:/Users/zicoe/OneDrive/Documentos/F003-1.xml"
+						},
+						{
+							"key": "files1",
+							"type": "file",
+							"src": "/C:/Users/zicoe/OneDrive/Documentos/F003-2.xml",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/vouchers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"vouchers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/vouchers/totals",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNzMyNjc2NTY1LCJleHAiOjE3MzI2ODAxNjUsIm5iZiI6MTczMjY3NjU2NSwianRpIjoiWllQY2I2N2hiOXdZN1dSUCIsInN1YiI6IjlkOTYwNTEyLTZjYWUtNDNhZC1iMmUwLTUxZmRmM2VmNTM4YyIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.lcCPQM5TnAqdvg5DxM7jq2BuCk2gy6Ay8WF0Qe1BXrk",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/vouchers/totals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"vouchers",
+						"totals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/vouchers/9d960585-6645-4c7f-8f8d-1a9bdf8cc62f",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNzMyNjc2NTY1LCJleHAiOjE3MzI2ODAxNjUsIm5iZiI6MTczMjY3NjU2NSwianRpIjoiWllQY2I2N2hiOXdZN1dSUCIsInN1YiI6IjlkOTYwNTEyLTZjYWUtNDNhZC1iMmUwLTUxZmRmM2VmNTM4YyIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.lcCPQM5TnAqdvg5DxM7jq2BuCk2gy6Ay8WF0Qe1BXrk",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/vouchers/9d960585-6645-4c7f-8f8d-1a9bdf8cc62f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"vouchers",
+						"9d960585-6645-4c7f-8f8d-1a9bdf8cc62f"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

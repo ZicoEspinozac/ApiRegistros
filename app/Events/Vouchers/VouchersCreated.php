@@ -7,6 +7,7 @@ use App\Models\Voucher;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Log;
 
 class VouchersCreated
 {
@@ -21,6 +22,6 @@ class VouchersCreated
     public function __construct(
         public readonly array $vouchers,
         public readonly User $user
-    ) {
+        ) {
     }
 }

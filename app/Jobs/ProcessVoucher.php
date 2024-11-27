@@ -15,15 +15,15 @@ class ProcessVoucher implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $xmlContent;
+    protected $xmlContents;
     protected $user;
 
     /**
      * Create a new job instance.
      */
-    public function __construct(string $xmlContent, User $user)
+    public function __construct(array $xmlContents, User $user)
     {
-        $this->xmlContent = $xmlContent;
+        $this->xmlContents = $xmlContents;
         $this->user = $user;
     }
 
@@ -33,7 +33,7 @@ class ProcessVoucher implements ShouldQueue
     public function handle(VoucherService $voucherService): void
     {
         try {
-            $voucherService->storeVoucherFromXmlContent($this->xmlContent, $this->user);
+            $voucherService->storeVouchersFromXmlContents($this->xmlContents, $this->user);
             Log::info('Voucher processed successfully for user: ' . $this->user->id);
         } catch (\Exception $e) {
             Log::error('Failed to process voucher for user: ' . $this->user->id . '. Error: ' . $e->getMessage());

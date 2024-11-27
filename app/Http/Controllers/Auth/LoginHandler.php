@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Auth;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use App\Http\Resources\Users\UserResource;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\WelcomeMail;
+
 
 class LoginHandler extends Controller
 {
@@ -28,6 +31,10 @@ class LoginHandler extends Controller
         }
 
         $user = JWTAuth::user();
+
+        // Enviar correo de bienvenida
+        Mail::to($user->email)->send(new WelcomeMail($user));
+        
 
         return response([
             'token' => $token,
