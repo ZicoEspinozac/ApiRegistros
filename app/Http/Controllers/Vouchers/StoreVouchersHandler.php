@@ -22,10 +22,8 @@ class StoreVouchersHandler extends Controller
             }
 
             $user = Auth::user();
-            $xmlContents = [];
             foreach ($xmlFiles as $xmlFile) {
                 $xmlContent = file_get_contents($xmlFile->getRealPath());
-                $xmlContents[] = $xmlContent;
 
                 // Despachar el job para procesar el comprobante en segundo plano
                 ProcessVoucher::dispatch($xmlContent, $user);
